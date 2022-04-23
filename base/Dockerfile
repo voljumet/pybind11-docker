@@ -15,16 +15,10 @@
 FROM ubuntu:latest
 
 ENV DEBIAN_FRONTEND=noninteractive
-# RUN DEBIAN_FRONTEND=noninteractive apt install -y tzdata
 
 RUN apt-get update; apt-get install -y curl python3-dev python3-pip \
-    wget libboost-python-dev libboost-dev build-essential \
-    zlib1g-dev libboost-system-dev libboost-program-options-dev git python-dev libxml2-dev libxslt-dev
-RUN apt-get -y install cmake protobuf-compiler
+    wget build-essential zlib1g-dev libxml2-dev libxslt-dev
 RUN pip install pybind11
 
-# BOOST:
-# RUN git init . && git submodule add -b stable https://github.com/pybind/pybind11 extern/pybind11 && git submodule update --init
-# RUN cd extern/pybind11 && mkdir build && cd build && cmake .. && make -j 4
      
 
